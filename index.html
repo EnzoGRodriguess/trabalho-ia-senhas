@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Senhas 🔒 · Corinthians</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- MASCOTE (Peixe Jaú + Dino) -->
+        <div class="mascote">
+            <div class="mascote-fish">
+                <div class="mascote-eye"></div>
+            </div>
+            <div class="mascote-dino">
+                <div class="dino-eye"></div>
+                <div class="dino-horn"></div>
+            </div>
+        </div>
+
+        <h1>⚡ SENHA <span>CORINTHIANS</span></h1>
+
+        <!-- DISPLAY SENHA -->
+        <div class="password-display">
+            <input type="text" id="senha" readonly value="••••••••••••••">
+            <button class="btn-copy" id="copiarBtn">📋 Copiar</button>
+        </div>
+
+        <!-- CONTROLES -->
+        <div class="controls">
+            <div class="slider-group">
+                <div class="slider-header">
+                    <span>Comprimento</span>
+                    <span id="tamanhoLabel">16</span>
+                </div>
+                <input type="range" id="tamanho" min="12" max="32" value="16" step="1">
+            </div>
+
+            <div class="checkboxes">
+                <label><input type="checkbox" id="chkMaiusculas" checked> A-Z</label>
+                <label><input type="checkbox" id="chkMinusculas" checked> a-z</label>
+                <label><input type="checkbox" id="chkNumeros" checked> 0-9</label>
+                <label><input type="checkbox" id="chkSimbolos" checked> !@#$%^*</label>
+            </div>
+        </div>
+
+        <!-- MEDIDOR DE FORÇA -->
+        <div class="strength-container">
+            <div class="strength-bar">
+                <div id="forcaBar" style="width: 0%; background: #d32f2f;"></div>
+            </div>
+            <div class="strength-label">
+                <span id="forcaTexto">Fraca</span>
+                <span id="entropiaBits">0 bits</span>
+            </div>
+        </div>
+
+        <button class="btn-gerar" id="gerarBtn">🔐 GERAR SENHA</button>
+        <div class="footer">100% client-side · crypto.getRandomValues</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

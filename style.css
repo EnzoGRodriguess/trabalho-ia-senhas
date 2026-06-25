@@ -1,0 +1,382 @@
+/* ----- RESET & BASE (Tema Corinthians) ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0b0b0b; /* preto Corinthians */
+    padding: 1.5rem;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    background: #1a1a1a; /* cinza profundo */
+    padding: 2rem 2rem 2.5rem;
+    border-radius: 2.5rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.8), 0 0 0 2px #2a2a2a;
+    transition: 0.2s;
+    border: 1px solid #3a3a3a;
+    color: #f0f0f0;
+}
+
+/* ----- MASCOTE CSS (Peixe Jaú + Dino) ----- */
+.mascote {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.8rem;
+    position: relative;
+    filter: drop-shadow(0 0 6px #f0f0f022);
+}
+
+.mascote-fish {
+    position: relative;
+    width: 60px;
+    height: 32px;
+    background: #2c2c2c;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    border: 2px solid #ccc;
+    transform: rotate(-4deg);
+}
+.mascote-fish::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 12px;
+    width: 18px;
+    height: 18px;
+    background: #3a3a3a;
+    border-radius: 50%;
+    border: 2px solid #aaa;
+    box-shadow: inset -4px -4px 0 #222;
+}
+.mascote-fish::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: -16px;
+    width: 22px;
+    height: 22px;
+    background: #2a2a2a;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    border-radius: 0 8px 8px 0;
+    border: 2px solid #bbb;
+    border-left: none;
+}
+/* olho do peixe */
+.mascote-eye {
+    position: absolute;
+    top: 4px;
+    left: 18px;
+    width: 8px;
+    height: 8px;
+    background: #f0f0f0;
+    border-radius: 50%;
+    box-shadow: inset 2px 2px 0 #444;
+    z-index: 2;
+}
+.mascote-eye::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 2px;
+    width: 4px;
+    height: 4px;
+    background: #000;
+    border-radius: 50%;
+}
+
+/* DINO corinthiano */
+.mascote-dino {
+    position: relative;
+    width: 50px;
+    height: 40px;
+    background: #2f2f2f;
+    border-radius: 40% 40% 20% 20% / 60% 60% 30% 30%;
+    border: 2px solid #ccc;
+    transform: rotate(6deg);
+    margin-left: -6px;
+}
+.mascote-dino::before {
+    content: '';
+    position: absolute;
+    top: -14px;
+    left: 8px;
+    width: 20px;
+    height: 18px;
+    background: #2a2a2a;
+    border-radius: 60% 60% 20% 20% / 80% 80% 20% 20%;
+    border: 2px solid #aaa;
+    border-bottom: none;
+}
+.mascote-dino::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    right: -12px;
+    width: 14px;
+    height: 14px;
+    background: #2f2f2f;
+    border-radius: 50% 50% 0 50%;
+    border: 2px solid #bbb;
+    transform: rotate(20deg);
+    border-left: none;
+    border-bottom: none;
+}
+.dino-eye {
+    position: absolute;
+    top: 6px;
+    left: 12px;
+    width: 7px;
+    height: 7px;
+    background: #eee;
+    border-radius: 50%;
+    box-shadow: inset 1px 1px 0 #333;
+}
+.dino-eye::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 3px;
+    height: 3px;
+    background: #000;
+    border-radius: 50%;
+}
+/* chifre / crista */
+.dino-horn {
+    position: absolute;
+    top: -16px;
+    right: 0px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 16px solid #3a3a3a;
+    transform: rotate(-10deg);
+    filter: drop-shadow(0 0 2px #666);
+}
+
+/* ----- TÍTULO ----- */
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #eee, #aaa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-bottom: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+h1 span {
+    background: #222;
+    padding: 0 12px;
+    border-radius: 40px;
+    font-size: 1rem;
+    -webkit-text-fill-color: #ddd;
+    border: 1px solid #444;
+}
+
+/* ----- SENHA DISPLAY ----- */
+.password-display {
+    background: #0f0f0f;
+    border-radius: 4rem;
+    padding: 0.2rem 0.2rem 0.2rem 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #3a3a3a;
+    margin: 1.8rem 0 1.2rem;
+    box-shadow: inset 0 4px 8px #00000055;
+}
+#senha {
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #eee;
+    word-break: break-all;
+    padding: 0.8rem 0;
+    min-height: 4.2rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-family: 'Courier New', monospace;
+}
+.btn-copy {
+    background: #2a2a2a;
+    border: none;
+    color: #ddd;
+    padding: 0.9rem 1.6rem;
+    border-radius: 3rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: 0.15s;
+    border: 1px solid #4a4a4a;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+.btn-copy:hover {
+    background: #3a3a3a;
+    color: white;
+    border-color: #888;
+}
+.btn-copy:active {
+    transform: scale(0.94);
+}
+
+/* ----- CONTROLES ----- */
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    margin: 1.8rem 0 1.5rem;
+}
+
+.slider-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+.slider-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    color: #bbb;
+    font-size: 1rem;
+}
+#tamanho {
+    width: 100%;
+    accent-color: #888;
+    background: #2a2a2a;
+    height: 6px;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+}
+#tamanho::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #ccc;
+    border: 2px solid #555;
+    transition: 0.1s;
+    box-shadow: 0 0 8px #00000077;
+}
+#tamanho::-webkit-slider-thumb:hover {
+    background: #eee;
+}
+
+.checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.8rem;
+    background: #151515;
+    padding: 0.8rem 1.2rem;
+    border-radius: 3rem;
+    border: 1px solid #2e2e2e;
+}
+.checkboxes label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #ccc;
+    font-weight: 400;
+    cursor: pointer;
+    user-select: none;
+}
+.checkboxes input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #888;
+    transform: scale(0.95);
+    cursor: pointer;
+}
+
+/* ----- MEDIDOR DE FORÇA ----- */
+.strength-container {
+    margin: 0.2rem 0 1.5rem;
+}
+.strength-bar {
+    height: 8px;
+    background: #2a2a2a;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 6px;
+    box-shadow: inset 0 2px 4px #00000066;
+}
+#forcaBar {
+    height: 100%;
+    width: 0%;
+    background: #d32f2f;
+    transition: width 0.2s, background 0.2s;
+    border-radius: 20px;
+}
+.strength-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-top: 4px;
+}
+
+/* ----- BOTÃO GERAR ----- */
+.btn-gerar {
+    width: 100%;
+    padding: 1.1rem;
+    background: #2a2a2a;
+    border: 2px solid #3d3d3d;
+    border-radius: 4rem;
+    color: #eee;
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 6px 0 #0a0a0a;
+    margin-top: 0.6rem;
+}
+.btn-gerar:hover {
+    background: #383838;
+    border-color: #777;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 0 #0a0a0a;
+}
+.btn-gerar:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #0a0a0a;
+}
+
+/* rodapé */
+.footer {
+    font-size: 0.7rem;
+    color: #4f4f4f;
+    text-align: center;
+    margin-top: 1.8rem;
+    letter-spacing: 0.3px;
+}
+
+/* responsivo */
+@media (max-width: 500px) {
+    .container { padding: 1.5rem; }
+    .checkboxes { gap: 0.4rem 0.8rem; }
+}
